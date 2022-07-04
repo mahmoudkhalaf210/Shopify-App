@@ -166,7 +166,7 @@
 				A66D66E72873597000C5BDBE /* AppDelegate */,
 				E24EF3C828737F2A004DC17F /* NetworkManager */,
 				A66D66F028736A3A00C5BDBE /* Scenes */,
-				A66D66EF287369B800C5BDBE /* Sroryboards */,
+				A66D66EF287369B800C5BDBE /* Storyboards */,
 				E24EF3C928737F75004DC17F /* Models */,
 				A66D66C02873568A00C5BDBE /* Assets.xcassets */,
 				A66D66C52873568A00C5BDBE /* Info.plist */,
@@ -201,14 +201,14 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		A66D66EF287369B800C5BDBE /* Sroryboards */ = {
+		A66D66EF287369B800C5BDBE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				A66D66C22873568A00C5BDBE /* LaunchScreen.storyboard */,
 				A66D66BA2873568900C5BDBE /* Main.storyboard */,
 				A654CA6828739693008456FC /* ProductDetails.storyboard */,
 			);
-			path = Sroryboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		A66D66F028736A3A00C5BDBE /* Scenes */ = {
