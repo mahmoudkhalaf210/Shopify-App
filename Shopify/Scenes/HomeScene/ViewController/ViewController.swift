@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
     @IBOutlet weak var brandCollectionView: UICollectionView!
@@ -54,6 +55,9 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "brandCell", for: indexPath) as! BrandCollectionViewCell
+        
+        
+        cell.brandImg.sd_setImage(with: URL(string:brandArr[indexPath.row].image.src ?? ""), placeholderImage: UIImage(named: "R2.png"))
         cell.brandName.text = brandArr[indexPath.row].title
         return cell
     }
