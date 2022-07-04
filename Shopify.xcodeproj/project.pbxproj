@@ -101,8 +101,7 @@
 		A66D66B32873568900C5BDBE /* Shopify */ = {
 			isa = PBXGroup;
 			children = (
-				A66D66B42873568900C5BDBE /* AppDelegate.swift */,
-				A66D66B62873568900C5BDBE /* SceneDelegate.swift */,
+				A66D66E72873597000C5BDBE /* AppDelegate */,
 				A66D66B82873568900C5BDBE /* ViewController.swift */,
 				A66D66BA2873568900C5BDBE /* Main.storyboard */,
 				A66D66C02873568A00C5BDBE /* Assets.xcassets */,
@@ -128,6 +127,15 @@
 				A66D66DA2873568A00C5BDBE /* ShopifyUITestsLaunchTests.swift */,
 			);
 			path = ShopifyUITests;
+			sourceTree = "<group>";
+		};
+		A66D66E72873597000C5BDBE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A66D66B42873568900C5BDBE /* AppDelegate.swift */,
+				A66D66B62873568900C5BDBE /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
