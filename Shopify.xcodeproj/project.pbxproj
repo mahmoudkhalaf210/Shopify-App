@@ -103,9 +103,8 @@
 			children = (
 				A66D66E72873597000C5BDBE /* AppDelegate */,
 				A66D66B82873568900C5BDBE /* ViewController.swift */,
-				A66D66BA2873568900C5BDBE /* Main.storyboard */,
+				A66D66EF287369B800C5BDBE /* Sroryboards */,
 				A66D66C02873568A00C5BDBE /* Assets.xcassets */,
-				A66D66C22873568A00C5BDBE /* LaunchScreen.storyboard */,
 				A66D66C52873568A00C5BDBE /* Info.plist */,
 				A66D66BD2873568900C5BDBE /* Shopify.xcdatamodeld */,
 			);
@@ -136,6 +135,15 @@
 				A66D66B62873568900C5BDBE /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A66D66EF287369B800C5BDBE /* Sroryboards */ = {
+			isa = PBXGroup;
+			children = (
+				A66D66C22873568A00C5BDBE /* LaunchScreen.storyboard */,
+				A66D66BA2873568900C5BDBE /* Main.storyboard */,
+			);
+			path = Sroryboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
