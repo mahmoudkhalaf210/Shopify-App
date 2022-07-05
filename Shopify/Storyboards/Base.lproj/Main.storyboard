@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L5j-yd-7JU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IS-79-UC0">
+                                <rect key="frame" x="20" y="99" width="374" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FDC-SO-mx7">
+                                <rect key="frame" x="20" y="489" width="374" height="299"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wxc-Zc-Sml">
+                                    <size key="itemSize" width="184" height="212"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="brandCell" id="nsF-ck-NH3" customClass="BrandCollectionViewCell" customModule="Shopify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="43.5" width="184" height="212"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KtV-6E-hE5">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="212"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xOH-Zf-NI3">
+                                                    <rect key="frame" x="20" y="8" width="144" height="155"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="144" id="HuU-zw-X67"/>
+                                                        <constraint firstAttribute="height" constant="155" id="clY-GM-WQo"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJf-y6-8iU">
+                                                    <rect key="frame" x="33" y="171" width="119" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="119" id="WEL-A1-CsL"/>
+                                                        <constraint firstAttribute="height" constant="33" id="gBW-6f-nNF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xOH-Zf-NI3" firstAttribute="leading" secondItem="KtV-6E-hE5" secondAttribute="leading" constant="20" symbolic="YES" id="74C-2N-PxW"/>
+                                                <constraint firstItem="xOH-Zf-NI3" firstAttribute="top" secondItem="KtV-6E-hE5" secondAttribute="top" constant="8" id="EWV-VN-TFv"/>
+                                                <constraint firstItem="CJf-y6-8iU" firstAttribute="leading" secondItem="KtV-6E-hE5" secondAttribute="leading" constant="33" id="c3a-39-AFh"/>
+                                                <constraint firstItem="CJf-y6-8iU" firstAttribute="top" secondItem="xOH-Zf-NI3" secondAttribute="bottom" constant="8" symbolic="YES" id="h5K-Ql-OyB"/>
+                                                <constraint firstAttribute="trailing" secondItem="CJf-y6-8iU" secondAttribute="trailing" constant="32" id="sgj-i8-jjU"/>
+                                                <constraint firstAttribute="trailing" secondItem="xOH-Zf-NI3" secondAttribute="trailing" constant="20" symbolic="YES" id="uwS-Wc-rpN"/>
+                                                <constraint firstAttribute="bottom" secondItem="CJf-y6-8iU" secondAttribute="bottom" constant="8" id="xly-nh-VN1"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="184" height="212"/>
+                                        <connections>
+                                            <outlet property="brandImg" destination="xOH-Zf-NI3" id="20R-WE-Fd3"/>
+                                            <outlet property="brandName" destination="CJf-y6-8iU" id="CQz-Pd-JIf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6hV-u7-uOI">
+                                        <rect key="frame" x="194" y="43.5" width="184" height="212"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vlT-0q-leD">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="212"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lOq-Cm-iTV">
+                                <rect key="frame" x="0.0" y="42" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="magnifyingglass" catalog="system" id="JsJ-Zu-NSH"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="r8d-Z8-Fso"/>
+                                    <barButtonItem image="cart.fill" catalog="system" id="pxD-n0-kON">
+                                        <connections>
+                                            <segue destination="dvA-94-SKw" kind="presentation" modalPresentationStyle="fullScreen" id="T5L-TL-zpd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="heart.fill" catalog="system" id="Lxh-tq-XzZ"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="home" image="homekit" catalog="system" id="QGz-u3-htR"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="annnceImg" destination="0IS-79-UC0" id="yMe-J4-cui"/>
+                        <outlet property="brandCollectionView" destination="FDC-SO-mx7" id="rlv-dv-gzT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1533.3333333333335" y="774.77678571428567"/>
+        </scene>
+        <!--me-->
+        <scene sceneID="smS-bw-XhY">
+            <objects>
+                <viewController id="P7e-xH-VbL" customClass="PersonalViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7KY-bn-k1K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gz6-wW-hsB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="me" image="person.fill" catalog="system" id="opD-8L-Mtz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKf-XW-zrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="775"/>
+        </scene>
+        <!--category-->
+        <scene sceneID="NrN-Dj-QnJ">
+            <objects>
+                <viewController id="O3p-ch-66L" customClass="CategoryViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t4e-Ti-G8V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="x9m-dS-3MQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="category" image="square.grid.2x2.fill" catalog="system" id="YCl-ru-II7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9y-XU-cPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="775"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="7iC-OY-98Y">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="L5j-yd-7JU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nxd-iN-ZNF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="WAP-9l-sBd"/>
+                        <segue destination="O3p-ch-66L" kind="relationship" relationship="viewControllers" id="dBU-jC-JjE"/>
+                        <segue destination="P7e-xH-VbL" kind="relationship" relationship="viewControllers" id="zpn-gi-hZA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4jK-GT-Obk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-309" y="40"/>
+        </scene>
+        <!--shoppingcart-->
+        <scene sceneID="7pN-Mz-Ka3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" referencedIdentifier="shoppingcart" id="dvA-94-SKw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dGf-4D-vLm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lLh-ak-c8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-991" y="265"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
