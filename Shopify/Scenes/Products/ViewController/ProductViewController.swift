@@ -9,9 +9,34 @@ import UIKit
 
 class ProductViewController: UIViewController {
     var productID:Int?
+    var arrayOfProduct:[Product] = []
+    @IBOutlet weak var productCollectionV: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("hello")
+        //productCollectionV.dataSource = self
+        //productCollectionV.delegate = self
+        let productViewModel1 = ProductViewModel()
+        productViewModel1.fetchData(endPoint: "\(productID)")
+        productViewModel1.bindingData = {product,error in
+            if let products = product{
+                self.arrayOfProduct = products
+          //      print("tmaam")
+                DispatchQueue.main.async {
+                    self.productCollectionV.reloadData()
+                    
+            }
+                  }
+            
+            
+            
+            
+            
+            
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -26,4 +51,18 @@ class ProductViewController: UIViewController {
     }
     */
 
+}
+extension ProductViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrayOfProduct.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath)as! ProductCVCell
+        cell.productName.text = arrayOfProduct[indexPath.row].title
+        return cell
+    }
+    
+    
+    
 }
