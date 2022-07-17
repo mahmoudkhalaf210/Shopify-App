@@ -24,21 +24,33 @@ init(apiService: ApiService = NetworkManger()) {
     self.apiService = apiService
 }
 
-
-
-    func fetchData(endPoint:String) {
-    apiService.fetchProduct(endPoint:endPoint ) { products, error in
-        if let products = products {
-            self.productArray = products
+    func fetchProduct(endPoint:String){
+        apiService.fetchProduct(endPoint: endPoint) { products, error in
+            if let products = products{
+                self.productArray = products
+            }
+            if let error = error {
+                self.error = error
+            }
         }
         
-        if let error = error {
-            self.error = error
-        }
+        
         
     }
 
-}
+//    func fetchProduct(endPoint:String) {
+//    apiService.fetchProduct(endPoint:endPoint ) { products, error in
+//        if let products = products {
+//            self.productArray = products
+//        }
+//
+//        if let error = error {
+//            self.error = error
+//        }
+//
+//    }
+//
+//}
 }
 
 
