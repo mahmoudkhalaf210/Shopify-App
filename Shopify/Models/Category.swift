@@ -1,9 +1,10 @@
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
 //
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
-
+//  Brands.swift
+//  Shopify
+//
+//  Created by Ahmed on 04/07/2022.
+//
 import Foundation
 
 // MARK: - Welcome

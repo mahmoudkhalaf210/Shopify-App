@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         print("login")
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             showAlert(message: "Complete all data first .")
+            
             return
         }
         if let customer = customes.first(where: {$0.email == email && $0.tags == password}) {
@@ -39,6 +40,9 @@ class LoginViewController: UIViewController {
             let alert = UIAlertController(title: "Loggin Successfuly", message: "you are loggin" , preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarHome")
+            }
         }else{
             showAlert(message: "No customer with this data .")
         }
