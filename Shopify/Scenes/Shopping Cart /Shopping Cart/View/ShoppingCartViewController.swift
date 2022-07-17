@@ -131,6 +131,12 @@ extension ShoppingCartViewController : UITableViewDelegate {
             calculateTotal()
             db.delete(cartItem: cart[indexPath.row], indexPath: indexPath, appDelegate: appDelegate, delegate: self)
             myTableView.reloadData()
+            
+            
+            let vc = storyboard?.instantiateViewController(withIdentifier: "shopping") as! ShoppingCartViewController
+            
+            self.present(vc, animated: false)
+            
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
         }
