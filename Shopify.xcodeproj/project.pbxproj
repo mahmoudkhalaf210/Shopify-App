@@ -21,7 +21,6 @@
 		A66D66D92873568A00C5BDBE /* ShopifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D66D82873568A00C5BDBE /* ShopifyUITests.swift */; };
 		A66D66DB2873568A00C5BDBE /* ShopifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D66DA2873568A00C5BDBE /* ShopifyUITestsLaunchTests.swift */; };
 		A66D66F528736AD200C5BDBE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D66F428736AD200C5BDBE /* HomeViewModel.swift */; };
-		A682E101287F1A1C00BD0954 /* Encoding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A682E100287F1A1C00BD0954 /* Encoding+Ext.swift */; };
 		A682E103287F1A3400BD0954 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A682E102287F1A3400BD0954 /* UIViewController+Ext.swift */; };
 		A682E106287F1A6500BD0954 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A682E105287F1A6500BD0954 /* Helper.swift */; };
 		A682E108287F1B3100BD0954 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A682E107287F1B3100BD0954 /* Customer.swift */; };
@@ -88,6 +87,7 @@
 		E2AD30DA287A2936002D9CF2 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD30D9287A2936002D9CF2 /* CategoryCollectionViewCell.swift */; };
 		E2AD30DC287A34A7002D9CF2 /* Categor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD30DB287A34A7002D9CF2 /* Categor.swift */; };
 		E2AD30DE287C504A002D9CF2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD30DD287C504A002D9CF2 /* Product.swift */; };
+		E2F15EB82884C95300F30B1B /* Encoding+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F15EB72884C95300F30B1B /* Encoding+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,6 @@
 		A66D66D82873568A00C5BDBE /* ShopifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopifyUITests.swift; sourceTree = "<group>"; };
 		A66D66DA2873568A00C5BDBE /* ShopifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A66D66F428736AD200C5BDBE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		A682E100287F1A1C00BD0954 /* Encoding+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encoding+Ext.swift"; sourceTree = "<group>"; };
 		A682E102287F1A3400BD0954 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		A682E105287F1A6500BD0954 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A682E107287F1B3100BD0954 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
@@ -195,6 +194,7 @@
 		E2AD30D9287A2936002D9CF2 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2AD30DB287A34A7002D9CF2 /* Categor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categor.swift; sourceTree = "<group>"; };
 		E2AD30DD287C504A002D9CF2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E2F15EB72884C95300F30B1B /* Encoding+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encoding+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,7 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				A682E10B287F1D3B00BD0954 /* Image+Ext.swift */,
-				A682E100287F1A1C00BD0954 /* Encoding+Ext.swift */,
+				E2F15EB72884C95300F30B1B /* Encoding+Ext.swift */,
 				A682E102287F1A3400BD0954 /* UIViewController+Ext.swift */,
 			);
 			path = Extentions;
@@ -1114,7 +1114,6 @@
 				E258AA092880567000AC4A72 /* Address.swift in Sources */,
 				E258A9FC2880567000AC4A72 /* PaymentOptionsViewController.swift in Sources */,
 				E24EF3F92874A5EA004DC17F /* ProductViewModel.swift in Sources */,
-				A682E101287F1A1C00BD0954 /* Encoding+Ext.swift in Sources */,
 				E258AA3B28819E2300AC4A72 /* itemInOrderTableViewCell.swift in Sources */,
 				A682E103287F1A3400BD0954 /* UIViewController+Ext.swift in Sources */,
 				E258AA0E2880567000AC4A72 /* urls.swift in Sources */,
@@ -1142,6 +1141,7 @@
 				A682E106287F1A6500BD0954 /* Helper.swift in Sources */,
 				E298F41528771FE4002A3C47 /* Category.swift in Sources */,
 				E258AA4B2881D24300AC4A72 /* AddressInMeTableViewCell.swift in Sources */,
+				E2F15EB82884C95300F30B1B /* Encoding+Ext.swift in Sources */,
 				E258AA062880567000AC4A72 /* ShoppingCartViewController.swift in Sources */,
 				E258AA462881CBA300AC4A72 /* SettingViewController.swift in Sources */,
 				A654CA6E2873974B008456FC /* ProductDetailsViewController.swift in Sources */,
