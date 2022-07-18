@@ -25,6 +25,9 @@ class PaymentOptionsViewController: UIViewController {
     var counters = [Int64]()
     var counterNumOfOrder = Int64()
     
+    var network = NetworkManger()
+    var orderProduct : [OrderItem] = []
+
     var db = DBmanger.sharedInstance
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -98,12 +101,14 @@ class PaymentOptionsViewController: UIViewController {
                 for item in TotalCart {
                     db.addOrderItem(appDelegate: appDelegate, customerId: customerID , price: item.price, title: item.productTitle!, typeOfPay: typeOfPay, total: totalCost, numofitem: item.numOfItem, time: Date() , address: address , number: counterNumOfOrder , imageitem: item.productImg!)
                 }
-                
+                postOrder(cartArray: TotalCart)
+
                 for item in cartDelete {
                     db.delete(leagueItem: item, appDelegate: appDelegate)
                 }
                 
                 db.IncreaseCounter(appDelegate: appDelegate, counter: counterNumOfOrder)
+
                 performSegue(withIdentifier: "go", sender: self)
             
             }
@@ -116,12 +121,15 @@ class PaymentOptionsViewController: UIViewController {
                 for item in TotalCart {
                     db.addOrderItem(appDelegate: appDelegate, customerId: customerID , price: item.price, title: item.productTitle!, typeOfPay: typeOfPay, total: totalCost, numofitem: item.numOfItem, time: Date() , address: address , number: counterNumOfOrder , imageitem: item.productImg!)
                 }
+                postOrder(cartArray: TotalCart)
+
               
                 for item in cartDelete {
                     db.delete(leagueItem: item, appDelegate: appDelegate)
                 }
                 
                 db.IncreaseCounter(appDelegate: appDelegate, counter: counterNumOfOrder)
+                
          
                 performSegue(withIdentifier: "go", sender: self)
 
@@ -226,4 +234,67 @@ extension PaymentOptionsViewController: PKPaymentAuthorizationViewControllerDele
 
     }
 }
+
+
+
+extension PaymentOptionsViewController {
+    
+    func getCustomer(completion: @escaping (Customer?)-> Void){
+        network.fetchCustomers{ customers, error in
+            guard let customers = customers, error == nil,let customerID = Helper.shared.getUserID() else {return}
+            
+            let filetr = customers.filter { selectedCustomer in
+                return selectedCustomer.id == customerID
+            }
+            if filetr.count != 0{
+                print(filetr.count)
+                completion(filetr[0])
+            }else{
+                completion(nil)
+            }
+        }
+    }
+}
+
+
+
+extension PaymentOptionsViewController{
+    func postOrder(cartArray:[CartItem]){
+        if cartArray.count == 0 {
+            print("no item")
+        }
+        else{
+        for item in cartArray {
+            orderProduct.append(OrderItem(variant_id: Int(item.productId), quantity: Int(item.numOfItem), name: item.productType, price: String( item.price),title:item.productTitle))
+        }
+        }
+        self.getCustomer { [self] customer in
+            guard let customer = customer else {
+                return
+            }
+            let order = OrderC(customer: customer, line_items: self.orderProduct, current_total_price: String(totalCost) )
+            let ordertoAPI = OrderToAPI(order: order)
+            
+            self.network.SubmitOrder(order: ordertoAPI) { data, urlResponse, error in
+                if error == nil {
+                    print("Post order success")
+                    if let data = data{
+                                    let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Dictionary<String,Any>
+                                    let returnedOrder = json["order"] as? Dictionary<String,Any>
+                                    let returnedCustomer = returnedOrder?["customer"] as? Dictionary<String,Any>
+                                    let id = returnedCustomer?["id"] as? Int ?? 0
+                        print(json)
+                        print("----------")
+                        print(id)
+                        
+                                }
+                }else{
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+    }
+    }
+    
+    
 

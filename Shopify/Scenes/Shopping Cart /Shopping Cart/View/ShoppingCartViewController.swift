@@ -26,7 +26,8 @@ class ShoppingCartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         
         customerID = Helper.shared.getUserID()
         checkLogin()

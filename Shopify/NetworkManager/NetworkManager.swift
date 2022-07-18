@@ -17,6 +17,29 @@ import Foundation
 
 class NetworkManger : ApiService {
     
+    
+    func SubmitOrder(order: OrderToAPI, Completion: @escaping ((Data?, URLResponse?, Error?) -> Void)) {
+        guard let url = URL(string: UrlService(endPoint: "orders.json").url) else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let session = URLSession.shared
+        request.httpShouldHandleCookies = false
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: order.asDictionary(), options: .prettyPrinted)
+            print(try! order.asDictionary())
+        }catch let error {
+            print(error.localizedDescription)
+        }
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        session.dataTask(with: request) { data, response, error in
+            Completion(data , response , error)
+        }.resume()
+    }
+    
+    
     func createAddress(customerId: Int, address: Address, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         let customer = CustomerAddress(addresses: [address])
         let putObject = PutAddress(customer: customer)
@@ -220,10 +243,7 @@ class NetworkManger : ApiService {
         }
         
         
+
+
+
     }
-
-
-   
-
-
-

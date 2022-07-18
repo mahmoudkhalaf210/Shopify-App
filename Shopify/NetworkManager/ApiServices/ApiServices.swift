@@ -14,4 +14,8 @@ protocol ApiService {
     func register(endPoint: String,newCustomer:NewCustomer, completion:@escaping (Data?, URLResponse? , Error?)->())
     func createAddress(customerId: Int, address: Address, completion: @escaping(Data?, URLResponse?, Error?)->())
     func fetchCategory(endPoint : String , Completion : @escaping (([Custom_collections]? , Error?) -> Void))
+    
+    func SubmitOrder (order : OrderToAPI , Completion : @escaping((Data? , URLResponse? , Error?) -> Void ))
+
+    
 }
